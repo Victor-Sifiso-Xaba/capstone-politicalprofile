@@ -1,0 +1,65 @@
+{% load static %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/polls_style.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'politicalprofile:values' %}">Core Values</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'politicalprofile:index_page' %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_auth:login_user' %}">Polls</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div>
+
+<div class="container detail-container">
+    <h1>{{ question.question_text }}</h1>
+    {% if error_message %}
+        <p class="text-danger"><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+
+        {% for choice in question.choice_set.all %}
+            <div class="form-check choice-container">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" class="form-check-input"/>
+                <label for="choice{{ forloop.counter }}" class="form-check-label">{{ choice.choice_text }}</label>
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary mt-3">Vote</button>
+    </form>
+</div>
+
+</body>
+</html>

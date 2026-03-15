@@ -1,0 +1,21 @@
+/* styles.css */
+
+body {
+    background-color: #44bc80;
+}
+
+.product-card {
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+}
+
+/* External CSS file (values_style.css) */
+.product-card img:hover {
+    transform: scale(1.175);
+    transition: transform 0.3s ease-in-out;
+}

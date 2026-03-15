@@ -1,0 +1,78 @@
+/* Background Styles */
+div{
+    background-color: rgb(191, 234, 161);
+}
+
+/* Header Styles */
+h1 {
+    color: rgb(1, 37, 1);
+    font-size: 23px;
+    font-family: sans-serif;
+    text-align: center;
+ }
+
+ /* Section Heading (h2) Styles */
+ h2  {
+    color: rgb(1, 37, 1);
+    font-size: 21px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* Section Heading (h3) Styles */
+h3  {
+    color: rgb(1, 37, 1);
+    font-size: 21px;
+    font-family: sans-serif;
+}
+
+/* Section Heading (h4) Styles */
+h4  {
+    color: rgb(1, 37, 1);
+    font-size: 19px;
+    font-family: sans-serif;
+}
+
+/* Paragraph Styles */
+p   {
+    font-size: 17px;
+    font-family: sans-serif;
+  
+}
+
+/* List Styles */
+li  {
+    font-family: sans-serif;
+    list-style-type: circle;
+    list-style-position: outside;
+}
+
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Navbar Styles */
+body .navbar {
+    background-color: #343a40; /* Same as values_style.css */
+}
+
+body .navbar-brand {
+    color: #0f0e0e; /* Same as values_style.css */
+}
+
+body .navbar-nav .nav-link {
+    color: #161414; /* Same as values_style.css */
+}
+
+body .navbar-nav .nav-link:hover {
+    color: #ffffff; /* Same as values_style.css */
+}
+/* List Styles */
+body .navbar-nav li {
+    font-family: sans-serif;
+    list-style-type: none; /* Remove the list item bullets */
+}

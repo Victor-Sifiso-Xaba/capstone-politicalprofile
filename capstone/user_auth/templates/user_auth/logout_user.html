@@ -1,0 +1,11 @@
+<!-- user_auth/templates/authentication/registration/logout_user.html -->
+
+{% extends 'user_auth/base.html' %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+  <h2>Logout</h2>
+  <p>You have been successfully logged out.</p>
+  <p><a href="{% url 'user_auth:login_user' %}">Log in to Polls?</a></p>
+{% endblock %}
